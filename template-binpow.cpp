@@ -9,6 +9,17 @@ int mul_inv(int b, int m) {return binpow(b, m-2)%m;}
 int mod_sub(int a, int b, int m=M) {return (a%m-b%m+m)%m;}
 int mod_div(int a, int b, int m=M) {return a%m*mul_inv(b, m)%m;}
 
+// Template-2 for binpow
+int bin_pow(int a, int k) {
+    int ans=1;
+    while(k>0) {
+        if(k&1) ans=ans*a;
+        a=a*a;
+        k/=2;
+    }
+    return ans;
+}
+
 //  - binpow
 // {
 // 	"Int a raised to Int b": {
