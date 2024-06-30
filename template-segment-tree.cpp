@@ -39,13 +39,13 @@ class SegmentTree{
     void update(int ind, int low, int high, int i, int val)
     {
         if (low==high) {
-            seg[ind]=val;
+            seg[ind]=arr[i];
             return;
         }
         int mid=(low+high)/2;
         if (i<=mid) update(2*ind+1, low, mid, i, val);
         else update(2*ind+2, mid+1, high, i, val);
-        seg[ind]=max(seg[2*ind+1],seg[2*ind+2]);
+        seg[ind]=seg[2*ind+1]+seg[2*ind+2];
     }
     void update(int i, int val) {
         update(0, 0, len-1, i, val);
