@@ -8,6 +8,7 @@ struct Matrix {
         return res;
     }
 };
+
 Matrix expo_power(Matrix a, int k) {
     Matrix ans;
     for(int i=0; i<2; i++) ans.a[i][i]=1;

@@ -4,7 +4,6 @@ https://www.codechef.com/problems/BREAKSTRING
 
 - Polynomial Hashing
 */
-
 int pw(int a, int b) {
     if (b == 0) return 1;
     int res = pw(a, b / 2);

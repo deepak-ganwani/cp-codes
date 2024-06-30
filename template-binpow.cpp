@@ -1,3 +1,4 @@
+// Template-1 (Recursion)
 int binpow(int a, int b, int m=M){
     if(b==0) return 1;
     int ans=power(a,b/2,m);
@@ -9,7 +10,7 @@ int mul_inv(int b, int m) {return binpow(b, m-2)%m;}
 int mod_sub(int a, int b, int m=M) {return (a%m-b%m+m)%m;}
 int mod_div(int a, int b, int m=M) {return a%m*mul_inv(b, m)%m;}
 
-// Template-2 for binpow
+// Template-2 (Iterative)
 int bin_pow(int a, int k) {
     int ans=1;
     while(k>0) {
