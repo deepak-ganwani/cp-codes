@@ -1,7 +1,7 @@
-int N=1e5+1;
-int binpow(int a, int b, int m=M){
+const int N=2e5+10;
+int bin_pow(int a, int b, int m=M){
     if(b==0) return 1;
-    int ans=power(a,b/2,m);
+    int ans=bin_pow(a,b/2,m);
     int res=ans*ans%m;
     if(b%2) return res*a%m;
     return res;
@@ -12,7 +12,7 @@ void preComp(int mod=M){
     int i;
     for(i=1; i<N; i++) fact[i]=i*fact[i-1]%mod;
     i--;
-    invfact[i]=binpow(fact[i], mod-2, mod);
+    invfact[i]=bin_pow(fact[i], mod-2, mod);
     for(i=N-2; i>=0; i--) invfact[i]=invfact[i+1]*(i+1)%mod;
 }
 int ncr(int n, int r, int mod=M){
